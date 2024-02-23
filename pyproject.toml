@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "sych"
+version = "0.1.0"
+description = "Assessment"
+authors = ["wickedknock <msaaddev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+pydantic = "^2.6.1"
+celery = {extras = ["redis"], version = "^5.3.6"}
+uuid = "^1.30"
+flower = "^2.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+ruff = "*"
+watchdog = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[virtualenvs]
+in-project = true
+path = ".venv"
