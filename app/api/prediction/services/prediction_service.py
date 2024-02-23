@@ -21,7 +21,7 @@ def predict_model_sync(body: prediction_schema.PredictionRequest)->prediction_sc
 
 def get_prediction_result(prediction_id: str)->prediction_schema.PredictionResponse:
     task = predict_model_async.app.AsyncResult(prediction_id)
-    if task.task_id is None:
+    if task is None or task.task_id is None:
         return prediction_schema.PredictionResponse(error="Prediction ID not found.")
     elif task.status == "PENDING":
         return prediction_schema.PredictionResponse(error="Prediction is still being processed.")
