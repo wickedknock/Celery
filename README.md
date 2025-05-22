@@ -24,5 +24,6 @@ horizontally scale and provide processing concurrently.We will use Redis as the 
 
 # Docker-Compose
 - run docker compose up --build
+- remove --pool=solo option for linux and mac
 
 
